@@ -1,0 +1,4 @@
+- [Workspace Preferences](workspace-preferences.md) — Output directory structure and conventions
+- [User Profile](user-profile.md) — Vijay Cinn's professional profile and location
+- [VJ-Reflect Test Suite Status](test-suite-vj-reflect.md) — Validation results for the self-improvement reflection test suite
+- [Investing Profile](investing-profile.md) — Detailed investor/trader profile: accounts, style, themes, platforms

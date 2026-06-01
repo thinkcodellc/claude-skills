@@ -5,6 +5,7 @@ Vijay Cinn — Cloud Architect, Quantitative Trading, Crypto Tax, Azure (DFW Met
 - Research topics and produce structured MD/HTML reports
 - Long-running analysis tasks (crypto, cloud costs, real estate)
 - Create deliverables: markdown reports, HTML dashboards
+- Individual investor/trader via Solo 401k and IRA at Fidelity — ETFs, sector funds, selective single names
 
 ## Workspace
 - Base directory: `C:\workspace\claude`
@@ -27,6 +28,14 @@ Vijay Cinn — Cloud Architect, Quantitative Trading, Crypto Tax, Azure (DFW Met
 - Agent: default to **vj-agent** for all research, analysis, coding, and general tasks
 - Data: prefer tables over prose for numerical comparisons
 - Code snippets: include when relevant (Python, JS, PowerShell)
+
+## Investing Profile (Quick Reference)
+- Accounts: Solo 401k + IRA at Fidelity — need IRA-friendly tickers
+- Style: real pullbacks only (20-30%+ off highs) + momentum + structural story
+- Themes: AI infrastructure stack, energy for data centers, Burry-style (water, food, real assets), scarce resources
+- Research output: TL;DR tables, entry ranges, R:R, portfolio roles (core/satellite/speculative), staged entries
+- Vibe: macro-aware, geopolitical-literate, risk-framed — never shallow backward-looking performance commentary
+- Full profile in [[investing-profile]]
 
 ## Self-Improvement
 - vj-agent loads past lessons from `.claude/vj-lessons.jsonl` at session start
