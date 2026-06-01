@@ -1,0 +1,51 @@
+{
+  "_note": "This is a VALIDATION SPEC, not exact expected output. Model output varies - the runner validates structure + semantic coverage, not exact text.",
+  "schema": {
+    "quality_score": "float, 0.0-1.0, expect < 0.65 given seeded errors",
+    "improvements": "array of 1-3 strings, imperative format, generalized (no file paths)",
+    "rules": "array of 0-5 strings, format 'Context: Rule', generalized (no file paths/names/URLs)"
+  },
+  "expected_detections": {
+    "must_detect": [
+      {
+        "seed": "tool_error",
+        "description": "Bash with PowerShell cmdlets on what appears to be a Linux system (or vice versa after compaction)",
+        "min_coverage": "At least 1 improvement or rule mentioning shell/OS mismatch or verifying environment before commands"
+      },
+      {
+        "seed": "retry_pattern",
+        "description": "Glob called 3 times - same intent, first 3 returned empty",
+        "min_coverage": "At least 1 improvement or rule mentioning retry limits, re-scoping searches, or switching tools after repeated failures"
+      },
+      {
+        "seed": "token_bloat",
+        "description": "Input tokens climb from 4.5K to 12K to 28K to 35K to 41K+ across successive turns",
+        "min_coverage": "At least 1 improvement or rule mentioning token/context management, compacting, or budget awareness"
+      },
+      {
+        "seed": "compaction_behavior_change",
+        "description": "Compaction at 54K to 15K, then agent uses Bash 'ls' and 'cat' despite being on Windows",
+        "min_coverage": "At least 1 improvement or rule about rechecking environment/OS after compaction"
+      },
+      {
+        "seed": "overengineering",
+        "description": "Config file modified 4 separate times for what could have been 1-2 edits",
+        "min_coverage": "At least 1 improvement about batching edits or minimizing tool calls"
+      }
+    ],
+    "must_not_detect": [
+      {
+        "description": "No false positives - should not report issues that aren't seeded"
+      }
+    ]
+  },
+  "anti_patterns": {
+    "rules_must_NOT_contain": [
+      "Specific file paths (like 'src/config.py', 'tests/test_config.py')",
+      "Specific URLs or hostnames",
+      "Specific error messages (like 'Get-ChildItem: command not found')",
+      "User names or personal identifiers"
+    ],
+    "quality_score_range": "expect 0.25-0.60 - low because of multiple errors + retries + bloat + overengineering, but not extremely low because task completed and test passed"
+  }
+}
