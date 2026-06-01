@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem *)",
+      "Bash(claude mcp *)",
+      "Bash(gh auth *)",
+      "Bash(where gh *)",
+      "Bash(Get-Command gh *)",
+      "PowerShell(Get-Command *)",
+      "Bash(/mnt/c/Program Files/GitHub CLI/gh.exe auth *)"
+    ]
+  }
+}
